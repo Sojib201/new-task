@@ -1,10 +1,25 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:task1/device_info.dart';
 
 import 'package:task1/geolocator.dart';
+import 'package:task1/http.dart';
+import 'package:task1/imagePicker.dart';
+import 'package:task1/localization.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('bn', 'BN'),
+        Locale('ur', 'PK'),
+      ],
+      fallbackLocale: const Locale('en', 'US'),
+      path: 'assets/language',
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +29,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -49,42 +67,49 @@ class MyHomePage extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => geoLocator()));
               },
-              child: Text('Geolocator'),
+              child: Text('geolocator'.tr()),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => devieInfo()));
               },
-              child: Text('Device Info'),
+              child: Text('device_info'.tr()),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Local Storage'),
+              child: Text('local_storage'.tr()),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => http()));
+              },
+              child: Text('http'.tr()),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('HTTP'),
+              child: Text('barcode'.tr()),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>imgaePicker()));
+              },
+              child: Text('image_picker'.tr()),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Barcode'),
+              child: Text('internet_connectivity'.tr()),
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Image Picker'),
+              child: Text('cache_network_image'.tr()),
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Text('Internet Connectivity'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Cache Network Image'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Localization'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Localization()));
+              },
+              child: Text('localization'.tr()),
             ),
           ],
         ),

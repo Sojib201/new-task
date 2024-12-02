@@ -1,0 +1,13 @@
+{
+    "channel_name": "The Coder Brain",
+    "app_name": "Flutter Localization",
+    "localization": "Localization",
+    "geolocator": "Geolocator",
+    "device_info" : "Device Info",
+    "local_storage" : "Local Storage",
+    "http": "HTTP",
+    "barcode" : "Barcode",
+    "image_picker": "Image Picker",
+    "internet_connectivity": "Internet Connectivity",
+    "cache_network_image" : "Cache Network Image"
+}

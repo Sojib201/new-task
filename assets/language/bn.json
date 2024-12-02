@@ -1,0 +1,13 @@
+{
+    "channel_name": "দ্য কোডার ব্রেইন",
+    "app_name": "ফ্লাটার লোকালাইজেশন",
+    "localization": "লোকালাইজেশন",
+    "geolocator": "জিওলোকেটর",
+    "device_info": "ডিভাইস তথ্য",
+    "local_storage": "লোকাল স্টোরেজ",
+    "http": "এইচটিটিপি",
+    "barcode": "বারকোড",
+    "image_picker": "ইমেজ পিকার",
+    "internet_connectivity": "ইন্টারনেট সংযোগ",
+    "cache_network_image": "ক্যাশ নেটওয়ার্ক ইমেজ"
+}

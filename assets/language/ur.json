@@ -1,0 +1,13 @@
+{
+    "channel_name": "دی کوڈر برین",
+    "app_name": "فلیٹر لوکلائزیشن",
+    "localization": "لوکلائزیشن",
+    "geolocator": "جیو لوکیٹر",
+    "device_info": "ڈیوائس کی معلومات",
+    "local_storage": "لوکل اسٹوریج",
+    "http": "ایچ ٹی ٹی پی",
+    "barcode": "بارکوڈ",
+    "image_picker": "امیج پکر",
+    "internet_connectivity": "انٹرنیٹ کنیکٹیویٹی",
+    "cache_network_image": "کیچ نیٹ ورک امیج"
+}

@@ -11,10 +11,9 @@ class devieInfo extends StatefulWidget {
 }
 
 class _devieInfoState extends State<devieInfo> {
-  String model="";
-  String id="";
-  String brand="";
-  String name="";
+  String model = "";
+  String id = "";
+  String brand = "";
 
   @override
   void initState() {
@@ -23,15 +22,14 @@ class _devieInfoState extends State<devieInfo> {
     getInfo();
   }
 
-
-
-  Future getInfo() async{
-    if(Platform.isAndroid){
+  Future getInfo() async {
+    if (Platform.isAndroid) {
       DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
       AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-      model= androidInfo.model.toString();
-      print("***");
+      model = androidInfo.model.toString();
       print(model);
+      brand = androidInfo.brand.toString();
+      id = androidInfo.id;
     }
   }
 
@@ -43,11 +41,33 @@ class _devieInfoState extends State<devieInfo> {
           //crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Device info : $model'),
-            SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){setState(() {
-
-            });}, child: Text('Get Device Info'))
+            Text(
+              'Device Brand : $brand',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Device model : $model',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Android Id : $id',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  getInfo();
+                  setState(() {});
+                },
+                child: Text('Get Device Info'))
           ],
         ),
       ),
