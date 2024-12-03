@@ -7,6 +7,8 @@ import 'package:task1/http.dart';
 import 'package:task1/imagePicker.dart';
 import 'package:task1/localization.dart';
 
+import 'BarCode.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -88,7 +90,9 @@ class MyHomePage extends StatelessWidget {
               child: Text('http'.tr()),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (contex)=>barCode()));
+              },
               child: Text('barcode'.tr()),
             ),
             ElevatedButton(

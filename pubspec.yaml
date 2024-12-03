@@ -40,6 +40,8 @@ dependencies:
   http: ^1.2.2
   image_picker: ^1.1.2
   easy_localization: ^3.0.7
+  qr_flutter: ^4.1.0
+  flutter_barcode_scanner: ^2.0.0
 
 dev_dependencies:
   flutter_test:
