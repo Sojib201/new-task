@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:task1/device_info.dart';
 
 import 'package:task1/geolocator.dart';
@@ -8,10 +10,15 @@ import 'package:task1/imagePicker.dart';
 import 'package:task1/localization.dart';
 
 import 'BarCode.dart';
+import 'hive.dart';
+import 'localStorage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox('myBox');
 
   runApp(EasyLocalization(
       supportedLocales: const [
@@ -79,7 +86,9 @@ class MyHomePage extends StatelessWidget {
               child: Text('device_info'.tr()),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>localStorage()));
+              },
               child: Text('local_storage'.tr()),
             ),
             ElevatedButton(
