@@ -59,11 +59,24 @@ class _getDataState extends State<getData> {
               itemCount: listData!.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: Text(listData[index].userId.toString(),style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                  leading: Text(
+                    listData[index].userId.toString(),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
                   title: Row(
                     children: [
-                      Text('Title : ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),textAlign: TextAlign.justify,),
-                      Expanded(child: Text(listData[index].title.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                      Text(
+                        'Title : ',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Expanded(
+                          child: Text(
+                        listData[index].title.toString(),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      )),
                     ],
                   ),
                   subtitle: Text(listData[index].body.toString()),
@@ -76,4 +89,3 @@ class _getDataState extends State<getData> {
     );
   }
 }
-

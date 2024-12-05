@@ -10,7 +10,9 @@ import 'package:task1/imagePicker.dart';
 import 'package:task1/localization.dart';
 
 import 'BarCode.dart';
+import 'cacheNetwork.dart';
 import 'hive.dart';
+import 'internetConnectivity.dart';
 import 'localStorage.dart';
 
 void main() async {
@@ -64,67 +66,97 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 15,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => geoLocator()));
-              },
-              child: Text('geolocator'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => devieInfo()));
-              },
-              child: Text('device_info'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>localStorage()));
-              },
-              child: Text('local_storage'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => http()));
-              },
-              child: Text('http'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (contex)=>barCode()));
-              },
-              child: Text('barcode'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>imgaePicker()));
-              },
-              child: Text('image_picker'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('internet_connectivity'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('cache_network_image'.tr()),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Localization()));
-              },
-              child: Text('localization'.tr()),
-            ),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => geoLocator()));
+                },
+                child: Text('geolocator'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => devieInfo()));
+                },
+                child: Text('device_info'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>localStorage()));
+                },
+                child: Text('local_storage'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => http()));
+                },
+                child: Text('http'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (contex)=>barCode()));
+                },
+                child: Text('barcode'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>imgaePicker()));
+                },
+                child: Text('image_picker'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => InternetConnectivity(),));
+                },
+                child: Text('internet_connectivity'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CacheNetwork(),));
+                },
+                child: Text('cache_network_image'.tr()),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Localization()));
+                },
+                child: Text('localization'.tr()),
+              ),
+            ],
+          ),
         ),
       ),
     );
