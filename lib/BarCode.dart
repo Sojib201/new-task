@@ -21,13 +21,31 @@ class _barCodeState extends State<barCode> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>QRScanner()));
-            }, child: Text('Scan QR Code'),),
-            SizedBox(height: 15,),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>QrGenerator()));
-            }, child: Text('Generate QR Code'),),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QrGenerator(),
+                  ),
+                );
+              },
+              child: Text('Generate QR Code'),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QRScanner(),
+                  ),
+                );
+              },
+              child: Text('Scan QR Code'),
+            ),
           ],
         ),
       ),
